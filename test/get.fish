@@ -17,9 +17,3 @@ test "$TESTNAME - Use --rule=regex to validate user input"
         echo 123 | get --rule="[0-9]"
         )
 end
-
-test "$TESTNAME - Display usage help"
-    "Usage: get [--prompt=<msg>] [--error=<msg>] [--rule=<regex>] [--silent] [--quiet] [--no-case] [--no-cursor] [--help] -p --prompt=<msg> Set the prompt message -r --rule=<regex> Use regex to validate input -e --error=<msg> Set the error message --no-cursor Hide cursor --no-case Ignore case during validation -s --silent Hide user input as it is typed -q --quiet Suppress output -h --help Show usage help" = (
-        get -h | xargs
-        )
-end

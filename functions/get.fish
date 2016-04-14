@@ -33,17 +33,17 @@ function get -d "Press any key to continue..."
                 set hide_cursor 1
 
             case h help
-                printf "Usage: get [--prompt=<msg>] [--error=<msg>] [--rule=<regex>] [--silent]\n"
+                printf "Usage: get [--prompt=<s>] [--error=<s>] [--rule=<r>] [--silent]\n"
                 printf "           [--quiet] [--no-case] [--no-cursor] [--help]\n\n"
 
-                printf "    -p --prompt=<msg>  Set the prompt message\n"
-                printf "    -r --rule=<regex>  Use regex to validate input\n"
-                printf "     -e --error=<msg>  Set the error message\n"
-                printf "          --no-cursor  Hide cursor\n"
-                printf "            --no-case  Ignore case during validation\n"
-                printf "          -s --silent  Hide user input as it is typed\n"
-                printf "           -q --quiet  Suppress output\n"
-                printf "            -h --help  Show usage help\n"
+                printf "    -p --prompt     Set the prompt text\n"
+                printf "    -r --rule       Set input validation regex\n"
+                printf "    -e --error      Set the error message\n"
+                printf "    -s --silent     Hide user input as it is typed\n"
+                printf "    -q --quiet      Enable quite mode\n"
+                printf "    -h --help       Show usage help\n"
+                printf "       --no-case    Ignore case during validation\n"
+                printf "       --no-cursor  Hide cursor\n"
                 return
 
             case \*
