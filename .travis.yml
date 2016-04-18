@@ -4,8 +4,5 @@ before_install:
     - sudo apt-get update
     - sudo apt-get -y install fish
 script:
-    - git clone --depth 1 https://github.com/fisherman/fisherman && make -f fisherman/Makefile
-    - fish -c "fisher update"
-    - fish -c "fisher install fishtape ."
-    - fish -c "fishtape test/*.fish"
-
+    - curl -Lo ~/.config/fish/functions/fin.fish --create-dirs git.io/fin
+    - fish -c "fin .; fishtape test/*.fish"
