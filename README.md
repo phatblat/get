@@ -95,8 +95,8 @@ get --prompt="Press any key to continue..." --no-cursor --silent=1
 [slack-link]: https://fisherman-wharf.herokuapp.com/
 [slack-badge]: https://img.shields.io/badge/slack-join%20the%20chat-00B9FF.svg?style=flat-square
 
-[travis-link]: https://travis-ci.org/fishery/get
-[travis-badge]: https://img.shields.io/travis/fishery/get.svg?style=flat-square
+[travis-link]: https://travis-ci.org/fisherman/get
+[travis-badge]: https://img.shields.io/travis/fisherman/get.svg?style=flat-square
 
 [Fisherman]: https://github.com/fisherman/fisherman
 [printf(1)]: http://linux.die.net/man/1/printf
