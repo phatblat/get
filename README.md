@@ -7,10 +7,10 @@
 
 ## Install
 
-With [Fisherman]:
+With [fisherman]:
 
 ```fish
-fisher install get
+fisher get
 ```
 
 ## Options
@@ -98,7 +98,7 @@ get --prompt="Press any key to continue..." --no-cursor --silent=1
 [travis-link]: https://travis-ci.org/fisherman/get
 [travis-badge]: https://img.shields.io/travis/fisherman/get.svg?style=flat-square
 
-[Fisherman]: https://github.com/fisherman/fisherman
+[fisherman]: https://github.com/fisherman/fisherman
 [printf(1)]: http://linux.die.net/man/1/printf
 [read(1)]: http://fishshell.com/docs/current/commands.html#read
 [fish]: https://github.com/fish-shell/fish-shell
