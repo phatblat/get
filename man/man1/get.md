@@ -24,6 +24,9 @@ get(1) -- Press Any Key to Continue
 * -s, --silent[=*number*]:
     Hide the user input as it is being typed. Use this option to handle passwords or other sensitive data. Optionally, indicate a *number* to read up to a certain number of characters instead of a new line by default.
 
+* -d, --default=*str*:
+    Use default value if none selected.
+
 * -q, --quiet:
     Suppress standard output.
 

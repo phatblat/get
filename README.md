@@ -23,6 +23,8 @@ fisher get
 
 * -s, --silent[=*number*]: Hide the user input as it is being typed. Use this option to handle passwords or other sensitive data. Optionally, indicate a *number* to read up to a certain number of characters instead of a new line by default.
 
+* -d, --default=*str*: Use default value if none selected.
+
 * -q, --quiet: Suppress standard output.
 
 * --no-case: Ignore case during validation.
@@ -92,11 +94,11 @@ get --prompt="Press any key to continue..." --no-cursor --silent=1
 
 ![get](https://cloud.githubusercontent.com/assets/8317250/12999807/870a0a42-d196-11e5-9f59-7d93411c2adf.gif)
 
-[slack-link]: https://fisherman-wharf.herokuapp.com/
-[slack-badge]: https://img.shields.io/badge/slack-join%20the%20chat-00B9FF.svg?style=flat-square
+[slack-link]: https://fisherman-wharf.herokuapp.com
+[slack-badge]: https://fisherman-wharf.herokuapp.com/badge.svg
 
 [travis-link]: https://travis-ci.org/fisherman/get
-[travis-badge]: https://img.shields.io/travis/fisherman/get.svg?style=flat-square
+[travis-badge]: https://img.shields.io/travis/fisherman/get.svg
 
 [fisherman]: https://github.com/fisherman/fisherman
 [printf(1)]: http://linux.die.net/man/1/printf
