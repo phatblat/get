@@ -88,7 +88,8 @@ function get -d "Press any key to continue..."
         end ^ /dev/null | if awk -v default="$default" -v rule="$rule" -v ignore_case=$ignore_case '
             {
                 print
-                exit ((ignore_case ? tolower($0) : $0) ~ rule) and (default != "" && $0 == "")
+                if ($0 == "" && default != "") exit 1
+                exit (ignore_case ? tolower($0) : $0) ~ rule
             }
             '
             set -e done
