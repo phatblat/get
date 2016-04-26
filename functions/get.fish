@@ -85,10 +85,10 @@ function get -d "Press any key to continue..."
         else
             dd bs=$count count=$count
 
-        end ^ /dev/null | if awk -v default="$default" -v rule="$rule" -v ignore_case=$ignore_case '
+        end ^ /dev/null | if awk -v setted="$default" -v rule="$rule" -v ignore_case=$ignore_case '
             {
                 print
-                if ($0 == "" && default != "") exit 1
+                if ($0 == "" && setted != "") exit 1
                 exit (ignore_case ? tolower($0) : $0) ~ rule
             }
             '
