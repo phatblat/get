@@ -7,6 +7,7 @@ function get -d "Press any key to continue..."
     set -l hide_input 0
     set -l hide_cursor 0
     set -l ignore_case 0
+    set -l default
 
     getopts $argv | while read -l 1 2
         switch "$1"
@@ -32,6 +33,9 @@ function get -d "Press any key to continue..."
             case {no,hide}-cursor
                 set hide_cursor 1
 
+            case d default
+                set default $2
+
             case h help
                 printf "Usage: get [--prompt=<s>] [--error=<s>] [--rule=<r>] [--silent]\n"
                 printf "           [--quiet] [--no-case] [--no-cursor] [--help]\n\n"
@@ -40,7 +44,8 @@ function get -d "Press any key to continue..."
                 printf "    -r --rule       Set input validation regex\n"
                 printf "    -e --error      Set the error message\n"
                 printf "    -s --silent     Hide user input as it is typed\n"
-                printf "    -q --quiet      Enable quite mode\n"
+                printf "    -d --default    Default value if none selected\n"
+                printf "    -q --quiet      Enable quiet mode\n"
                 printf "    -h --help       Show usage help\n"
                 printf "       --no-case    Ignore case during validation\n"
                 printf "       --no-cursor  Hide cursor\n"
@@ -80,15 +85,20 @@ function get -d "Press any key to continue..."
         else
             dd bs=$count count=$count
 
-        end ^ /dev/null | if awk -v rule="$rule" -v ignore_case=$ignore_case '
+        end ^ /dev/null | if awk -v setted="$default" -v rule="$rule" -v ignore_case=$ignore_case '
             {
                 print
+                if ($0 == "" && setted != "") exit 1
                 exit (ignore_case ? tolower($0) : $0) ~ rule
             }
             '
             set -e done
 
         end | read -p "" -l input
+
+        if test -z "$input" -a -n "$default"
+          set input $default
+        end
 
         if test $hide_input -eq 1
             echo > /dev/stderr
