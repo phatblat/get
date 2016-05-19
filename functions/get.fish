@@ -37,18 +37,18 @@ function get -d "Press any key to continue..."
                 set default $2
 
             case h help
-                printf "Usage: get [--prompt=<s>] [--error=<s>] [--rule=<r>] [--silent]\n"
-                printf "           [--quiet] [--no-case] [--no-cursor] [--help]\n\n"
+                printf "Usage: get [(-p | --prompt)] TEXT [(-e | --error) TEXT] [(-r | --rule) REGEX]\n"
+                printf "           [(-s | --silent)] [--no-case] [--no-cursor] [(-q | --quiet)] \n\n"
 
-                printf "    -p --prompt     Set the prompt text\n"
-                printf "    -r --rule       Set input validation regex\n"
-                printf "    -e --error      Set the error message\n"
-                printf "    -s --silent     Hide user input as it is typed\n"
-                printf "    -d --default    Default value if none selected\n"
-                printf "    -q --quiet      Enable quiet mode\n"
-                printf "    -h --help       Show usage help\n"
-                printf "       --no-case    Ignore case during validation\n"
-                printf "       --no-cursor  Hide cursor\n"
+                printf "    -p --prompt    TEXT     Set the prompt text\n"
+                printf "    -e --error     TEXT     Set the error message\n"
+                printf "    -r --rule      REGEX    Set input validation regex\n"
+                printf "    -s --silent             Hide user input as it is typed\n"
+                printf "    -d --default            Default value if none selected\n"
+                printf "    -q --quiet              Enable quiet mode\n"
+                printf "       --no-case            Ignore case during validation\n"
+                printf "       --no-cursor          Hide cursor\n"
+                printf "    -h --help               Show usage help\n"
                 return
 
             case \*
