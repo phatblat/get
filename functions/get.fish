@@ -70,7 +70,7 @@ function get -d "Press any key to continue..."
         set prompt "$prompt "
     end
 
-    if test "$count" -le 0
+    if test $count -le 0
         set -e count
     end
 
